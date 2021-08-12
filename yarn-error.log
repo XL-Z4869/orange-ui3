@@ -1,0 +1,50 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe D:\software_download\yarn\bin\yarn.js add vue-router 4.0.0-beta.3
+
+PATH: 
+  D:\Download\cmder\vendor\git-for-windows\mingw64\bin;D:\Download\cmder\vendor\git-for-windows\usr\bin;C:\Users\HP\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\software_download\quicktime\QTSystem;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;D:\software_download\Git\cmd;C:\Program Files\Common Files\Autodesk Shared;C:\Program Files (x86)\Autodesk\Backburner;D:\software_download\yarn\bin;C:\Program Files\nodejs;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;D:\software_download\Microsoft VS Code\bin;C:\Users\HP\AppData\Local\Yarn\bin;C:\Users\HP\AppData\Roaming\npm;D:\software_download\WebStorm 2020.1\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.5
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/4.0.0-beta.3: Not found
+      at Request.params.callback [as _callback] (D:\software_download\yarn\lib\cli.js:66097:18)
+      at Request.self.callback (D:\software_download\yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (D:\software_download\yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (D:\software_download\yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "orange-ui",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build"
+    },
+    "dependencies": {
+      "vue": "^3.0.0-rc.1"
+    },
+    "devDependencies": {
+      "vite": "^1.0.0-rc.1",
+      "@vue/compiler-sfc": "^3.0.0-rc.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
