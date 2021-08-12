@@ -2,8 +2,8 @@
 import App from './App.vue'
 import './index.css'
 
-import Frank from './components/Frank.vue'
-import Frank2 from './components/Frank2.vue'
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
 
 import {createWebHashHistory,createRouter} from 'vue-router'
 
@@ -14,11 +14,11 @@ const router=createRouter({
     routes:[
         {
             path:'/',
-            component:Frank
+            component:Home
         },
         {
-            path:'/xxx',
-            component:Frank2
+            path:'/doc',
+            component:Doc
         }
     ]
 })
