@@ -61,10 +61,10 @@ import Button from '../lib/Button.vue'
 export default {
   components:{Button},
   setup(){
-    const onclick=()=>{
+    const onClick=()=>{
       console.log("hi");
     }
-    return {onclick}
+    return {onClick}
   }
 }
 </script>
