@@ -1,9 +1,10 @@
-<template>
+<template v-if="visible">
 <div class="orange-dialog-overlay"></div>
   <div class="orange-dialog-wrapper">
       <div class="orange-dialog">
       <header>
-          标题<span class="orange-dialog-close"></span>
+          标题
+          <span class="orange-dialog-close"></span>
       </header>
       <main>
           <p>第一行字</p>
@@ -19,6 +20,12 @@
  <script>
  import Button from './Button.vue'
  export default {
+     props:{
+         visible:{
+            type:Boolean,
+            default:false
+         }
+     },
      components:{
         Button
      }
@@ -27,7 +34,7 @@
 <style lang="scss" >
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.orange-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
