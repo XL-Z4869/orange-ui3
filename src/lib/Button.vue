@@ -1,17 +1,32 @@
 <template>
  <button class="orange-button"
- :class="{[`orange-theme-${theme}`]:theme}">
+ :class="classes">
   <slot/>
  </button>
 </template>
 
 <script>
+import { computed } from '@vue/reactivity'
 export default {
    props:{
       theme:{
         type:String,
         default:'button'
+   },
+   size:{
+     type:String,
+     default:"button"
    }
+   },
+   setup(props){
+      const {theme,size}=props
+      const classes=computed(()=>{
+        return {
+          [`orange-theme-${theme}`]:theme,
+          [`orange-size-${size}`]:size
+        }
+      })
+      return {classes}
    }
    
 }
@@ -67,6 +82,17 @@ $radius: 4px;
       background: darken(white, 5%);;
     }
   }
+  &.gulu-theme-button{
+    &.gulu-size-big{
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+    &.gulu-size-small{
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
 }
-  
+  }
+}
 </style>
