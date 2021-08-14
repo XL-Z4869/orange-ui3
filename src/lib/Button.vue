@@ -1,6 +1,6 @@
 <template>
  <button class="orange-button"
- :class="classes">
+ :class="classes" :disabled="disabled">
   <slot/>
  </button>
 </template>
@@ -20,6 +20,10 @@ export default {
    level:{
      type:String,
      default:"normal"
+   },
+   disabled:{
+     type:String,
+     default:false
    }
    },
    setup(props){
@@ -44,6 +48,7 @@ $color: #333;
 $orange: orange;
 $radius: 4px;
 $red:red;
+$grey:grey;
 .orange-button {
   box-sizing: border-box;
   height: $h;
@@ -144,6 +149,21 @@ $red:red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+    &.orange-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.orange-theme-link, &.orange-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
