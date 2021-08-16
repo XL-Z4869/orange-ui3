@@ -1,17 +1,23 @@
 <template>
 <div class="orange-tabs">
 <div class="orange-tabs-nav">
-  <div class="orange-tabs-nav-item" v-for="(t,index) in titles" :key="index">{{t}}</div>
+  <div class="orange-tabs-nav-item" v-for="(t,index) in titles" :key="index" @click="select(t)" :class="{selected:t===selected}">{{t}}</div>
 </div>
 <div class="orange-tabs-content"> 
-  <component class="orange-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" />
+  <component class="orange-tabs-content-item" :class="{selected:c.props.title===selected}" v-for="(c,index) in defaults" :is="c" :key="index" />
 </div>
 </div>
 </template>
 
 <script lang="ts">
+import { computed } from 'vue'
 import Tab from './Tab.vue'
 export default {
+  props:{
+    selected:{
+    type:String
+  }
+  },
   setup(props, context) {
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
@@ -19,19 +25,30 @@ export default {
         throw new Error('Tabs 子标签必须是 Tab')
       }
     })
+    const current=computed(()=>{
+      console.log('重新return');
+      return defaults.filter((tag)=>{
+        return tag.props.title===props.selected
+      })[0]
+    })
     const titles = defaults.map((tag) => {
       return tag.props.title
     })
+    const select=(title:string)=>{
+      context.emit('update:selected',title)
+    }
     return {
       defaults,
-      titles
+      titles,
+      current,
+      select
     }
   }
 }
 </script>
 
 <style lang="scss">
-$blue: #40a9ff;
+$orange: orange;
 $color: #333;
 $border-color: #d9d9d9;
 .orange-tabs {
@@ -47,12 +64,18 @@ $border-color: #d9d9d9;
         margin-left: 0;
       }
       &.selected {
-        color: $blue;
+        color: $orange;
       }
     }
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
