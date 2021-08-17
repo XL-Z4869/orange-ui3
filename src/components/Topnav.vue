@@ -1,10 +1,10 @@
 <template>
     <div class="topnav">
-        <div class="logo" >
+        <router-link to="/" class="logo" >
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-nav"></use>
             </svg>
-        </div>
+        </router-link>
         <ul class="menu">
             <li><router-link to="/doc">文档</router-link></li>
         </ul>
@@ -44,7 +44,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1;
+    z-index:20;
     justify-content: center;
     align-content: center;
     > .logo {
