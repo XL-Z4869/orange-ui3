@@ -27,7 +27,7 @@ export default {
     const x=()=>{
       const divs=navItems.value
       const result=divs.filter(div=>div.classList.contains('selected'))[0]
-      console.log(result);
+      // console.log(result);
       const {
         width
       }=result.getBoundingClientRect()
@@ -49,7 +49,7 @@ export default {
       }
     })
     const current=computed(()=>{
-      console.log('重新return');
+      // console.log('重新return');
       return defaults.filter((tag)=>{
         return tag.props.title===props.selected
       })[0]
