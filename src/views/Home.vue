@@ -25,7 +25,7 @@
            <use xlink:href="#icon-ts"></use>
         </svg> 
         <h3>基于 TypeScript </h3>
-        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+        <p>源代码采用 TypeScript </p>
       </li>
       <li>
         <svg class="icon" aria-hidden="true">
@@ -57,12 +57,23 @@ clip-path:ellipse(80% 60% at 50% 40%)
 
  .features{
   margin: 64px auto;
-  width: 400px;
+  padding:0 16px;
   @media (min-width: 800px) {
     width: 800px;
+    >ul{
+      >li{
+        width:50%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    >ul{
+      >li{
+        width:33.333%
+      }
+    }
+
   }
   >ul {
     display: flex;
