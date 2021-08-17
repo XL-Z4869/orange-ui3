@@ -8,17 +8,27 @@
         <ul class="menu">
             <li><router-link to="/doc">文档</router-link></li>
         </ul>
-        <span class="toggleAside" @click="toggleAside"></span>
+        <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleAside">
+            <use xlink:href="#icon-aside"></use>
+        </svg>
     </div>
 </template>
 <script lang="ts">
 import {  inject, Ref } from 'vue'
 export default {
+    props:{
+        toggleMenuButtonVisible:{
+            type:Boolean,
+            default:false
+        }
+    },
   setup(){
        const asideVisible=inject<Ref<boolean>>('asideVisible')
        console.log("Topnav获得的asideVisible的值是"+asideVisible.value); 
        const toggleAside=()=>{
            asideVisible.value=!asideVisible.value
+           console.log(123);
+           
        }
        return {toggleAside}
   }
@@ -54,15 +64,14 @@ export default {
         }
     }
     > .toggleAside {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background: red;
+        width: 32px;
+        height: 32px;
         position: absolute;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
         display: none;
+       
     }
     @media (max-width:500px) {
         >.menu{display: none;}
