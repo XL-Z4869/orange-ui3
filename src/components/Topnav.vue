@@ -6,6 +6,7 @@
             </svg>
         </router-link>
         <ul class="menu">
+            <li><a href="https://www.yuque.com/zhuohan-2ilbw/prkm6w">博客</a></li>
             <li><router-link to="/doc">文档</router-link></li>
         </ul>
         <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleAside">
@@ -37,6 +38,8 @@ export default {
 <style lang="scss" scoped>
 .topnav {
     // background: pink;
+    background-color: white;
+    box-shadow:2px 2px 5px rgb(175, 175, 175);
     display: flex;
     padding: 16px;
     position: relative;
@@ -44,7 +47,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    z-index:20;
+    z-index:30;
     justify-content: center;
     align-content: center;
     > .logo {
@@ -61,6 +64,7 @@ export default {
         flex-wrap: nowrap;
         > li {
             margin: 0 1em;
+            padding-top: 3px;
         }
     }
     > .toggleAside {

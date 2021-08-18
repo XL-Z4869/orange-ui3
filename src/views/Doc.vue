@@ -14,6 +14,9 @@
                   <li>
                     <router-link to="/doc/get-started">开始</router-link>
                   </li>
+                  </ol>
+                  <h2>组件列表</h2>
+                  <ol>
                     <li>
                         <router-link to="/doc/switch">Switch 组件</router-link>
                     </li>
@@ -50,6 +53,7 @@ export default {
 <style lang="scss" scoped>
 $aside-index:10;
 .layout {
+   
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -66,19 +70,21 @@ $aside-index:10;
   }
 }
 .content {
+  margin-top: 20px;
   display: flex;
   > aside {
     flex-shrink: 0;
+    margin-top:20px;
   }
   > main {
     flex-grow: 1;
-    padding: 16px;
+    padding:30px 60px;
+     
     background: white;
-    
   }
 }
 aside {
-    background: lightblue;
+    background: #E8E6FF;
     width: 150px;
     padding: 16px 0;
     position: fixed;
@@ -89,13 +95,13 @@ aside {
     z-index:$aside-index;
     > h2 {
         margin-bottom: 4px;
-        padding:0 16px;
+        padding:3px 16px 0;
     }
     > ol {
         > li {
            >a{
              display: block;
-             padding:4px 16px;
+             padding:8px 16px;
              text-decoration: none;
            }
            .router-link-active{
