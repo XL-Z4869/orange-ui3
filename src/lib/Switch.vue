@@ -23,10 +23,11 @@ export default {
 $h: 22px;
 $h2: $h - 4px;
  .orange-switch {
-  height: $h; width: $h * 2; 
+  height: $h; 
+  width: $h * 2; 
   border: none;
   background: #bfbfbf; 
-  border-radius: $h/2; 
+  border-radius:11px; 
   position: relative;
   > span {
     position: absolute; 
@@ -34,7 +35,7 @@ $h2: $h - 4px;
     height: $h2; 
     width: $h2; 
     background: white; 
-    border-radius: $h2 / 2; 
+    border-radius: 11px; 
     transition: all 250ms;
   }
 
