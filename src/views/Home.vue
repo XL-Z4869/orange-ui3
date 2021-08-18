@@ -79,7 +79,7 @@ clip-path:ellipse(80% 60% at 50% 40%)
     display: flex;
     flex-wrap: wrap;
     >li {
-      width: 400px;
+      
       margin: 16px 0;
       display: grid;
       justify-content: start;
